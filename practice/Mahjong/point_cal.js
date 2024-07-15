@@ -1,5 +1,4 @@
 // 麻雀の飜数を入力すると、その点数を表示する
-// 作成中
 
 class Mahjong {
   point_cal(x) {
