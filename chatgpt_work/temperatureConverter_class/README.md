@@ -4,17 +4,19 @@
 
 ## プロパティ:
 
-特にプロパティは必要ありません。
+- 特にプロパティは必要ありません。
 
 ## メソッド:
 
-**celsiusToFahrenheit(celsius):**  
-摂氏温度 (celsius) を華氏温度に変換して返すメソッド。  
-計算式: 華氏温度 = 摂氏温度 \* 9/5 + 32
+**celsiusToFahrenheit(celsius):**
 
-**fahrenheitToCelsius(fahrenheit):**  
-華氏温度 (fahrenheit) を摂氏温度に変換して返すメソッド。  
-計算式: 摂氏温度 = (華氏温度 - 32) \* 5/9
+- 摂氏温度 (celsius) を華氏温度に変換して返すメソッド。
+- 計算式: 華氏温度 = 摂氏温度 \* 9/5 + 32
+
+**fahrenheitToCelsius(fahrenheit):**
+
+- 華氏温度 (fahrenheit) を摂氏温度に変換して返すメソッド。
+- 計算式: 摂氏温度 = (華氏温度 - 32) \* 5/9
 
 > // 例: TemperatureConverter クラスのインスタンス化とメソッドの使用例  
 > let converter = new TemperatureConverter();  
