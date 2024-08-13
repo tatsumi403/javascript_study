@@ -11,11 +11,11 @@ class ShoppingCart {
 
   // items内のすべてのアイテムの合計金額を計算して返すメソッド
   getTotal() {
-    let sougaku = 0;
+    let totalAmount = 0;
     for (let i = 0; i < this.items.length; i++) {
-      sougaku += this.items[i].price;
+      totalAmount += this.items[i].price;
     }
-    return sougaku;
+    return totalAmount;
   }
 
   // 配列を空にするメソッド
@@ -31,7 +31,7 @@ console.log(cart.getTotal());
 cart.clearCart();
 console.log(cart.getTotal());
 cart.addItem("Peach", 300);
-cart.addItem("orange", 200);
+cart.addItem("Orange", 200);
 console.log(cart.getTotal());
 cart.clearCart();
 console.log(cart.getTotal());
