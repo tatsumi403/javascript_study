@@ -22,12 +22,12 @@ stack（スタック内の要素を保持する配列、初期値は空の配列
 スタックが空であるかどうかを確認し、空の場合は true、そうでない場合は false を返すメソッド。
 
 > // 例: Stack クラスのインスタンス化とメソッドの使用例
-> let stack = new Stack();
-> stack.push(10);
-> stack.push(20);
-> console.log(stack.peek()); // 20
-> console.log(stack.pop()); // 20
-> console.log(stack.pop()); // 10
+> let stack = new Stack();  
+> stack.push(10);  
+> stack.push(20);  
+> console.log(stack.peek()); // 20  
+> console.log(stack.pop()); // 20  
+> console.log(stack.pop()); // 10  
 > console.log(stack.isEmpty()); // true
 
 ### 要件:
