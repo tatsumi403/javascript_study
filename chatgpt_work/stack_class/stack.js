@@ -12,7 +12,8 @@ class Stack {
   // スタックの一番上にある要素を削除して返すメソッド。スタックが空の場合はnullを返す
   pop() {
     if (this.stack.length == 0) {
-      return "null";
+      // 単にnullとして返す
+      return null;
     }
     return this.stack.pop();
   }
@@ -21,7 +22,8 @@ class Stack {
   // スタックが空の場合はnullを返す
   peek() {
     if (this.stack.length == 0) {
-      return "null";
+      // 単にnullとして返す
+      return null;
     }
     return this.stack[this.stack.length - 1];
   }
@@ -29,11 +31,8 @@ class Stack {
   // スタックが空であるかどうか確認する
   // 空の場合はtrue,そうでない場合はfalseを返す
   isEmpty() {
-    if (this.stack.length == 0) {
-      return true;
-    } else {
-      return false;
-    }
+    // ifを使わずそのまま評価結果を返す
+    return this.stack.length == 0;
   }
 }
 
