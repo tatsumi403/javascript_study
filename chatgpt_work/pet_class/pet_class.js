@@ -16,8 +16,9 @@ class Pet {
     play() {
         if (this.isHungry) {
             console.log(`${this.name} is too hungry to play.`);
+        } else {
+            console.log(`${this.name} is playing happily.`);
         }
-        console.log(`${this.name} is playing happily.`);
     }
 
     // ペットと話す
