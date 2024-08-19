@@ -31,15 +31,15 @@ books（図書リスト: 各本の情報を格納する配列）
 > // Library クラスのインスタンスを作成  
 > let library = new Library();
 >
-> // 本を追加
+> // 本を追加  
 > library.addBook("The Great Gatsby", "F. Scott Fitzgerald");  
 > library.addBook("1984", "George Orwell");
 >
-> // 本の貸し出し
+> // 本の貸し出し  
 > console.log(library.borrowBook("1984")); // 貸し出し成功メッセージ  
 > console.log(library.isAvailable("1984")); // false
 >
-> // 本の返却
+> // 本の返却  
 > console.log(library.returnBook("1984")); // 返却成功メッセージ  
 > console.log(library.isAvailable("1984")); // true
 
