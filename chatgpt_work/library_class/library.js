@@ -3,14 +3,14 @@ class Library {
     this.books = [];
   }
 
-  //
+  // 本を追加するメソッド
   addBook(title, author) {
-    this.books.title = title;
-    this.books.author = author;
-    this.books.available = available;
+    this.books.push({ title: title, author: author, available: true });
   }
 
-  //
+  // 本を貸し出すメソッド
+  // このメソッドの修正から_20240901
+  // 配列にオブジェクトがあることを意識してオブジェクト内の値を取得する
   borrowBook(title) {
     if (this.books.title == title) {
       if (this.books.available == true) {
@@ -63,5 +63,5 @@ console.log(library.returnBook("1984")); // 返却成功メッセージ
 // console.log(library.isAvailable("1984")); // true
 
 // デバッグ
-// console.log(library.borrowBook("1984"));
-// console.log(library.books);
+// console.log(library.borrowBook("The Great Gatsby"));
+console.log(library.books);
