@@ -9,26 +9,26 @@ class Library {
   }
 
   // 本を貸し出すメソッド
-  // このメソッドの修正から_20240901
-  // 配列にオブジェクトがあることを意識してオブジェクト内の値を取得する
   borrowBook(title) {
-    if (this.books.title == title) {
-      if (this.books.available == true) {
-        this.books.available = false;
+    let borrowMatchIndex = this.books.findIndex((book) => book.title === title);
+    if (borrowMatchIndex !== -1) {
+      if (this.books[borrowMatchIndex].available == true) {
+        this.books[borrowMatchIndex].available = false;
         return "貸し出し成功!";
       } else {
         return "エラー!その本は貸し出しできません!";
       }
     } else {
-      return "エラー!その本は貸し出しできません!";
+      return "エラー!その本は図書リストにありません!";
     }
   }
 
   // 本を返却するメソッド
   returnBook(title) {
-    if (this.books.title == title) {
-      if (this.books.available == false) {
-        this.books.available = true;
+    let returnMatchIndex = this.books.findIndex((book) => book.title === title);
+    if (returnMatchIndex !== -1) {
+      if (this.books[returnMatchIndex].available == false) {
+        this.books[returnMatchIndex].available = true;
         return "返却成功!";
       } else {
         return "エラー!その本は返却できません!";
@@ -38,11 +38,13 @@ class Library {
     }
   }
 
-  // 作成中
   // 本が貸し出し可能か確認するメソッド
   isAvailable(title) {
-    if (this.books.available) {
-      return;
+    let availableMatchIndex = this.books.findIndex((book) => book.title === title);
+    if (this.books[availableMatchIndex].available) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
@@ -56,12 +58,8 @@ library.addBook("1984", "George Orwell");
 
 // 本の貸し出し
 console.log(library.borrowBook("1984")); // 貸し出し成功メッセージ
-// console.log(library.isAvailable("1984")); // false
+console.log(library.isAvailable("1984")); // false
 
 // 本の返却
 console.log(library.returnBook("1984")); // 返却成功メッセージ
-// console.log(library.isAvailable("1984")); // true
-
-// デバッグ
-// console.log(library.borrowBook("The Great Gatsby"));
-console.log(library.books);
+console.log(library.isAvailable("1984")); // true
