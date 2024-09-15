@@ -8,15 +8,20 @@ class Library {
     this.books.push({ title: title, author: author, available: true });
   }
 
+  // 本を検索するヘルパーメソッド（重複コードを減らすため追加
+  findBook(title) {
+    return this.books.find((book) => book.title === title);
+  }
+
   // 本を貸し出すメソッド
   borrowBook(title) {
-    let borrowMatchIndex = this.books.findIndex((book) => book.title === title);
-    if (borrowMatchIndex !== -1) {
-      if (this.books[borrowMatchIndex].available == true) {
-        this.books[borrowMatchIndex].available = false;
+    const book = this.findBook(title);
+    if (book) {
+      if (book.available) {
+        book.available = false;
         return "貸し出し成功!";
       } else {
-        return "エラー!その本は貸し出しできません!";
+        return "エラー!その本は貸し出し中です!";
       }
     } else {
       return "エラー!その本は図書リストにありません!";
@@ -25,27 +30,24 @@ class Library {
 
   // 本を返却するメソッド
   returnBook(title) {
-    let returnMatchIndex = this.books.findIndex((book) => book.title === title);
-    if (returnMatchIndex !== -1) {
-      if (this.books[returnMatchIndex].available == false) {
-        this.books[returnMatchIndex].available = true;
+    const book = this.findBook(title);
+    if (book) {
+      if (!book.available) {
+        book.available = true;
         return "返却成功!";
       } else {
-        return "エラー!その本は返却できません!";
+        return "エラー!その本はすでに返却されています!";
       }
     } else {
-      return "エラー!その本は返却できません";
+      return "エラー!その本は図書リストにありません!";
     }
   }
 
   // 本が貸し出し可能か確認するメソッド
   isAvailable(title) {
-    let availableMatchIndex = this.books.findIndex((book) => book.title === title);
-    if (this.books[availableMatchIndex].available) {
-      return true;
-    } else {
-      return false;
-    }
+    const book = this.findBook(title);
+    // 本が存在している場合はavailabilityを返し、見つからない場合はfalseを返す
+    return book ? book.available : false;
   }
 }
 
